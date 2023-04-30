@@ -188,7 +188,7 @@ const openCityModal = () => {
 };
 const getCurrentWeather = async (city) => {
   const currentTemp = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=487d2c9a19284572ba720152232704&q=${city}`
+    `https://api.weatherapi.com/v1/current.json?key=487d2c9a19284572ba720152232704&q=${city}`
   );
   const jsonData = await currentTemp.json();
   return jsonData;
