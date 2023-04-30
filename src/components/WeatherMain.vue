@@ -186,6 +186,7 @@ const appVisible = ref(false);
 const openCityModal = () => {
   cityModal.value = !cityModal.value;
 };
+const serverLessBranch = "This is a vercel branch";
 const getCurrentWeather = async (city) => {
   const currentTemp = await fetch(
     `https://api.weatherapi.com/v1/current.json?key=487d2c9a19284572ba720152232704&q=${city}`
