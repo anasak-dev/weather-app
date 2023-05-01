@@ -188,9 +188,12 @@ const openCityModal = () => {
 };
 const serverLessBranch = "This is a vercel branch";
 const getCurrentWeather = async (city) => {
-  const currentTemp = await fetch(
-    `https://api.weatherapi.com/v1/current.json?key=487d2c9a19284572ba720152232704&q=${city}`
-  );
+  const formData = new FormData();
+  formData.append("city", city);
+  const currentTemp = await fetch(`/api/handler`, {
+    body: formData,
+    method: "post",
+  });
   const jsonData = await currentTemp.json();
   return jsonData;
 };
