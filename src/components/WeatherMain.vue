@@ -142,10 +142,10 @@ import animationStarsInSky from "../assets/Render.json";
 import animationCloudsInSky from "../assets/animation-cloud-moving.json";
 
 import { gsap, Power4 } from "gsap";
-import bgCold from "../assets/cold-weather.jpeg";
+import bgCold from "../assets/cold-weather.webp";
 import bgRainy from "../assets/weather-rainy.png";
-import bgSun from "../assets/bgClouds.png";
-import bgNight from "../assets/weather-night.jpg";
+import bgSun from "../assets/bg-sun.webp";
+import bgNight from "../assets/weather-night.webp";
 import loader from "../assets/loading-state.gif";
 import moonSeparate from "../assets/moon-separate.png";
 import sunSeparate from "../assets/sun-separate.png";
