@@ -1,4 +1,3 @@
-<script>
 import { gsap } from "gsap";
 export const onEnter = (el, done) => {
   gsap.to(el, {
@@ -11,11 +10,7 @@ export const onEnter = (el, done) => {
 
 export const onTempLeave = (el, done) => {
   const currentWeather = el.querySelector(".current-weather");
-  gsap.to(currentWeather, {
-    opacity: 1,
-    y: -100,
-    onComplete: done,
-  });
+  gsap.to(currentWeather, { opacity: 1, y: -100, onComplete: done });
   el.querySelector(".weatherIcon").style.transform =
     "translateX(-20px) scale(0)";
   el.querySelector(".weatherIcon").style.opacity = 0;
@@ -24,15 +19,14 @@ export const onTempLeave = (el, done) => {
     property.style.opacity = 0;
   });
 };
-
 export const onTempEnter = (el, done) => {
+  el.style.opacity = 1;
   const showWeatherProperties = () => {
     const weatherPropertiesWrapper = el.querySelector(".weather-properties");
     weatherPropertiesWrapper
       .querySelectorAll("div")
       .forEach((singleProperty, index) => {
         index++;
-        console.log(index);
         gsap.to(singleProperty, {
           opacity: 1,
           y: 0,
@@ -41,7 +35,6 @@ export const onTempEnter = (el, done) => {
           onComplete: done,
         });
       });
-
     const weatherIcon = el.querySelector(".weatherIcon");
     gsap.to(weatherIcon, {
       opacity: 1,
@@ -51,7 +44,6 @@ export const onTempEnter = (el, done) => {
       onComplete: done,
     });
   };
-
   const currentWeather = el.querySelector(".current-weather");
   gsap.to(currentWeather, {
     opacity: 1,
@@ -59,8 +51,8 @@ export const onTempEnter = (el, done) => {
     onComplete: showWeatherProperties,
   });
 };
-
 export const onBeforeTempEnter = (el) => {
+  el.style.opacity = 0;
   el.querySelector(".current-weather").style.transform = "translateY(50px)";
   el.querySelector(".weatherIcon").style.transform =
     "translateX(-20px) scale(0)";
@@ -70,15 +62,9 @@ export const onBeforeTempEnter = (el) => {
     property.style.opacity = 0;
   });
 };
-
 export const onIconEnter = (el, done) => {
-  gsap.to(el, {
-    opacity: 1,
-    y: 0,
-    onComplete: done,
-  });
+  gsap.to(el, { opacity: 1, y: 0, onComplete: done });
 };
-
 export const onBGLeave = (el, done) => {
   gsap.to(el, {
     opacity: 0,
@@ -86,23 +72,13 @@ export const onBGLeave = (el, done) => {
   });
 };
 export const onBGEnter = (el, done) => {
-  gsap.to(el, {
-    duration: 3,
-    scale: 1,
-    onComplete: done,
-  });
+  gsap.to(el, { duration: 3, scale: 1, onComplete: done });
 };
 export const onBeforeBGEnter = (el) => {
   el.style.transform = "scale(1.5)";
 };
 export const onMoonEnter = (el, done) => {
-  gsap.to(el, {
-    x: 0,
-    delay: 1,
-    duration: 2,
-    onComplete: done,
-  });
-
+  gsap.to(el, { x: 0, delay: 1, duration: 2, onComplete: done });
   gsap.to(el, {
     rotation: 360,
     ease: "none",
@@ -112,14 +88,10 @@ export const onMoonEnter = (el, done) => {
     duration: 40,
   });
 };
-export const onMoonBeforeEnter = (el) => {
-  console.log("yooo", el);
+export const onMoonBeforeEnter = (el, done) => {
   el.style.transform = "translateX(150px)";
 };
-
 export const onBeforeEnter = (el) => {
   el.style.opacity = 0;
   el.style.transform = "translateY(20px)";
-};
-// Transition animations
-</script>
+}; // Transition animations

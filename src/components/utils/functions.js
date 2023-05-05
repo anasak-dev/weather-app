@@ -1,6 +1,4 @@
 export const openCityModal = (modal) => {
-  console.log(modal);
-
   modal.open = !modal.open;
 };
 

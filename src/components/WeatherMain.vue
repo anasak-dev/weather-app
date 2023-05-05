@@ -70,7 +70,7 @@
           >
             <div
               class="overflow-hidden shadow-2xl bg-white w-full max-w-[280px] rounded-md flex items-center flex-col pt-4"
-              :key="currentTemperature"
+              :key="currentTemperature.temperature"
             >
               <div
                 class="overflow-hidden flex w-full items-center justify-center gap-3 pb-4"
@@ -176,17 +176,17 @@ import animationStarsInSky from "../assets/Render.json";
 import animationCloudsInSky from "../assets/animation-cloud-moving.json";
 // import animations
 import {
+  onBeforeTempEnter,
+  onTempEnter,
+  onTempLeave,
+  onMoonEnter,
   onBGEnter,
   onBGLeave,
   onBeforeBGEnter,
   onBeforeEnter,
   onMoonBeforeEnter,
-  onBeforeTempEnter,
-  onTempEnter,
-  onTempLeave,
-  onMoonEnter,
   onEnter,
-} from "./animations.vue";
+} from "./utils/animations";
 // import city list
 import { cityList } from "./data/cityList";
 // import functions (Openmodal,getCurrentWeather)
